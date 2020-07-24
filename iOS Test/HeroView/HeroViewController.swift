@@ -20,6 +20,7 @@ class HeroViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var reachebilityLabel: UILabel!
     @IBOutlet weak var heroCollectionView: UICollectionView!{
         didSet {
             heroCollectionView.dataSource = self
@@ -47,8 +48,14 @@ class HeroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.fetchData()
-        setupViews()
+        if ReachabilityConnection.isConnectedToNetwork() {
+            presenter?.fetchData()
+            setupViews()
+        } else {
+            heroCollectionView.isHidden = true
+            heroTableView.isHidden = true
+            reachebilityLabel.isHidden = false
+        }
     }
 
     // MARK: - publics
@@ -62,6 +69,9 @@ class HeroViewController: UIViewController {
         // TODO: Add setting up views here
         let heroNib = UINib(nibName: HeroCollectionViewCell.identifier, bundle: nil)
         let categoryNib = UINib(nibName: HeroTableViewCell.identifier, bundle: nil)
+        heroCollectionView.isHidden = false
+        heroTableView.isHidden = false
+        reachebilityLabel.isHidden = true
         heroTableView.estimatedRowHeight = 20
         heroTableView.register(categoryNib, forCellReuseIdentifier: HeroTableViewCell.identifier)
         heroCollectionView.register(heroNib, forCellWithReuseIdentifier: HeroCollectionViewCell.identifier)

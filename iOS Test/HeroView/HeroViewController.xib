@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="heroCollectionView" destination="hBH-sc-jiv" id="pzt-iI-Wgh"/>
                 <outlet property="heroTableView" destination="yaJ-vJ-H6f" id="62o-kq-xxh"/>
+                <outlet property="reachebilityLabel" destination="T68-BQ-Jb2" id="EZU-so-z5B"/>
                 <outlet property="view" destination="iN0-l3-epB" id="piT-28-NMF"/>
             </connections>
         </placeholder>
@@ -36,14 +37,22 @@
                         <constraint firstAttribute="width" constant="200" id="1y3-jN-Z0h"/>
                     </constraints>
                 </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network is not available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T68-BQ-Jb2">
+                    <rect key="frame" x="350.5" y="196.5" width="195" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="yaJ-vJ-H6f" firstAttribute="top" secondItem="hBH-sc-jiv" secondAttribute="top" id="5hL-IP-lbp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hBH-sc-jiv" secondAttribute="bottom" id="6up-Wj-Ncv"/>
                 <constraint firstItem="yaJ-vJ-H6f" firstAttribute="bottom" secondItem="hBH-sc-jiv" secondAttribute="bottom" id="EhT-Wp-CJf"/>
+                <constraint firstItem="T68-BQ-Jb2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hvo-Fh-hLo"/>
                 <constraint firstItem="hBH-sc-jiv" firstAttribute="leading" secondItem="yaJ-vJ-H6f" secondAttribute="trailing" constant="16" id="KXK-fE-dvy"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hBH-sc-jiv" secondAttribute="trailing" id="fWN-Y9-1fc"/>
+                <constraint firstItem="T68-BQ-Jb2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="h0E-g0-iAk"/>
                 <constraint firstItem="yaJ-vJ-H6f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kb2-gG-YIa"/>
                 <constraint firstItem="hBH-sc-jiv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="z4I-tI-PJg"/>
             </constraints>

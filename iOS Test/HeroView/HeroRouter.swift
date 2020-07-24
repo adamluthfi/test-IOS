@@ -13,6 +13,7 @@ class HeroRouter: HeroRouterProtocol {
      // MARK: RouterProtocol
     func navigateToDetail(heroDetail: HeroEntity) {
         let vc = ModuleBuilder.shared.createHeroDetailViewController(heroDetail: heroDetail)
+        vc.title = "Detail"
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

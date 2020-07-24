@@ -62,13 +62,21 @@ class HeroDetailViewController: UIViewController {
             heroDetailImage.kf.setImage(with: urlString)
         }
         
-        if let nameHero = heroEntity?.localizedName {
-            heroNameLabel.text = nameHero
-        }
+        if let nameHero = heroEntity?.localizedName { heroNameLabel.text = nameHero }
         
-        if let rolesHero = heroEntity?.roles {
-            heroRolesLabel.text = "Roles: " + rolesHero.map { $0.rawValue }.joined(separator: ", ")
-        }
+        if let rolesHero = heroEntity?.roles { heroRolesLabel.text = "Roles: " + rolesHero.map { $0.rawValue }.joined(separator: ", ") }
+        
+        if let attr = heroEntity?.primaryAttr { chainLabel.text = "\(attr)" }
+        
+        if let health = heroEntity?.baseHealth { healthLabel.text = "\(health)" }
+        
+        if let attackMin = heroEntity?.baseAttackMin, let attackMax = heroEntity?.baseAttackMax { swordLabel.text = "\(attackMin) - \(attackMax)" }
+        
+        if let mana = heroEntity?.baseMana { chemistryLabel.text = "\(mana)" }
+        
+        if let armor = heroEntity?.baseArmor { shieldLabel.text = "\(armor)" }
+        
+        if let speed = heroEntity?.moveSpeed { bootsLabel.text = "\(speed)" }
     }
 }
 

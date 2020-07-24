@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B219B6924CA8BC2005D7F3A /* ReachabilityConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B219B6824CA8BC2005D7F3A /* ReachabilityConnection.swift */; };
 		0B307D8024C887D200D7324A /* ApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B307D7F24C887D200D7324A /* ApiConstant.swift */; };
 		0B307D8324C8882E00D7324A /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B307D8224C8882E00D7324A /* BaseApi.swift */; };
 		0B307D8624C8889700D7324A /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B307D8524C8889700D7324A /* ApiConfig.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B219B6824CA8BC2005D7F3A /* ReachabilityConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityConnection.swift; sourceTree = "<group>"; };
 		0B307D7F24C887D200D7324A /* ApiConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstant.swift; sourceTree = "<group>"; };
 		0B307D8224C8882E00D7324A /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
 		0B307D8524C8889700D7324A /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B219B6724CA8BAB005D7F3A /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				0B219B6824CA8BC2005D7F3A /* ReachabilityConnection.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		0B307D7D24C8878200D7324A /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +197,7 @@
 		0BF658DE24C7E700006489E6 /* iOS Test */ = {
 			isa = PBXGroup;
 			children = (
+				0B219B6724CA8BAB005D7F3A /* Commons */,
 				0B307D7D24C8878200D7324A /* Network */,
 				0BF658F324C7E73A006489E6 /* HeroView */,
 				0BF6591324C7E8E1006489E6 /* HeroDetailView */,
@@ -385,6 +396,7 @@
 				0BF6590C24C7E84B006489E6 /* HeroContract.swift in Sources */,
 				0BF6590E24C7E84B006489E6 /* HeroRouter.swift in Sources */,
 				0BF6590424C7E7B5006489E6 /* ModuleBuilder.swift in Sources */,
+				0B219B6924CA8BC2005D7F3A /* ReachabilityConnection.swift in Sources */,
 				0B4356E624C88C9200F909F6 /* ResponseParser.swift in Sources */,
 				0B70F72524C95866009B0350 /* HeroDetailCollectionViewCell.swift in Sources */,
 				0BF6591024C7E84B006489E6 /* HeroInteractor.swift in Sources */,

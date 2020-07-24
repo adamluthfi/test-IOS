@@ -17,7 +17,7 @@ class HeroDetailCollectionViewCell: UICollectionViewCell {
     
     var heroDetail: HeroEntity? {
         didSet {
-            if let baseUrl = heroDetail?.img {
+            if let baseUrl = heroDetail?.icon {
                 var urlImage = "https://api.opendota.com"
                 urlImage += baseUrl
                 guard let urlString = URL(string: urlImage) else { return }

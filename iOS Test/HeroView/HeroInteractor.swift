@@ -11,7 +11,7 @@ import Foundation
 class HeroInteractor: HeroInteractorInputProtocol {
     
     weak var output: HeroInteractorOutputProtocol?
-    let provider = NetworkManager<ApiConstant>(verbose: true)
+    let provider = NetworkManager<ApiConstant>()
     
     func fetchData() {
         provider.api().request(.heroStats) { result in

@@ -10,15 +10,10 @@ import Foundation
 import Moya
 
 class NetworkManager<T: BaseApi> {
-    let ErrorMessage = "Internal error"
-    var isVerbose: Bool!
-    
-    init(verbose: Bool = true) {
-        isVerbose = verbose
-    }
     
     func api() -> MoyaProvider<T> {
-        let provider = MoyaProvider<T>(plugins: [NetworkLoggerPlugin()])
+        let provider = MoyaProvider<T>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
         return provider
     }
+    
 }
