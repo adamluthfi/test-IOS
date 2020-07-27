@@ -14,12 +14,6 @@ class HeroViewController: UIViewController {
     
     var presenter: HeroPresenterProtocol?
     var heroRoles: [String] = ["Carry","Disabler","Durable","Escape","Initiator","Jungler","Nuker","Pusher","Support","All"]
-    var heroStats: [HeroEntity]? {
-        didSet {
-            heroTableView.reloadData()
-            heroCollectionView.reloadData()
-        }
-    }
     
     @IBOutlet weak var reachebilityLabel: UILabel!
     @IBOutlet weak var heroCollectionView: UICollectionView!{
@@ -36,6 +30,15 @@ class HeroViewController: UIViewController {
         }
     }
     
+    var heroList: Results<HeroEntity>? {
+        didSet {
+            heroTableView.reloadData()
+            heroCollectionView.reloadData()
+        }
+    }
+    
+    let realm = try! Realm()
+    
     // MARK: - Overrides
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,9 +52,6 @@ class HeroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let realm = try! Realm()
-        let result = realm.objects(HeroEntity.self)
-        print(result)
         if ReachabilityConnection.isConnectedToNetwork() {
             presenter?.fetchData()
             setupViews()
@@ -86,12 +86,12 @@ class HeroViewController: UIViewController {
 extension HeroViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return heroStats?.count ?? 0
+        return heroList?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroCollectionViewCell.identifier, for: indexPath) as! HeroCollectionViewCell
-        cell.hero = heroStats?[indexPath.item]
+        cell.hero = heroList?[indexPath.item]
         return cell
     }
     
@@ -102,7 +102,7 @@ extension HeroViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let heroDetail = heroStats?[indexPath.item] else { return }
+        guard let heroDetail = heroList?[indexPath.item] else { return }
         presenter?.navigateToDetail(heroDetail: heroDetail)
     }
 }
@@ -127,7 +127,10 @@ extension HeroViewController: UITableViewDelegate, UITableViewDataSource {
 extension HeroViewController: HeroViewProtocol {
     func populateData(data: [HeroEntity]) {
         DispatchQueue.main.async {
-            self.heroStats = data
+            let realm = try! Realm()
+            let result = realm.objects(HeroEntity.self)
+            print(result[0].localizedName)
+            self.heroList = realm.objects(HeroEntity.self)
         }
     }
 

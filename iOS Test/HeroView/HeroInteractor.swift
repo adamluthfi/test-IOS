@@ -46,15 +46,15 @@ class HeroInteractor: HeroInteractorInputProtocol {
                     _hero.intGain = hero.intGain
                     _hero.legs = hero.legs
                     _hero.moveSpeed = hero.moveSpeed
-                    _hero.primaryAttr = hero.primaryAttr
+                    //_hero.primaryAttr = hero.primaryAttr
                     _hero.proBan = hero.proBan
                     _hero.projectileSpeed = hero.projectileSpeed
                     _hero.proWin = hero.proWin
-                    _hero.roles = hero.roles
+                    _hero.roleList = hero.roleList
                     _hero.strGain = hero.strGain
                     _hero.turnRate = hero.turnRate
                     try! self.realm.write {
-                        self.realm.create(HeroEntity.self, value: _hero)
+                        self.realm.add(_hero, update: .modified)
                     }
                 }
                 self.output?.requestDidSuccess(metadata: metadata)

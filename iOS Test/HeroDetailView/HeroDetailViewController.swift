@@ -64,7 +64,10 @@ class HeroDetailViewController: UIViewController {
         
         if let nameHero = heroEntity?.localizedName { heroNameLabel.text = nameHero }
         
-        if let rolesHero = heroEntity?.roles { heroRolesLabel.text = "Roles: " + rolesHero.map { $0.rawValue }.joined(separator: ", ") }
+        if let rolesHero = heroEntity?.roleList {
+            heroRolesLabel.text = "Roles: " + rolesHero.map { $0.carry }.joined(separator: ", ")
+            
+        }
         
         if let attr = heroEntity?.primaryAttr { chainLabel.text = "\(attr)" }
         
