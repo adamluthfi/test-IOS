@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
 
 class HeroViewController: UIViewController {
     
@@ -48,6 +49,9 @@ class HeroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = try! Realm()
+        let result = realm.objects(HeroEntity.self)
+        print(result)
         if ReachabilityConnection.isConnectedToNetwork() {
             presenter?.fetchData()
             setupViews()

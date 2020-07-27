@@ -8,6 +8,7 @@ target 'iOS Test' do
   # Pods for iOS Test
   pod 'Moya', '~> 14.0'
   pod 'Kingfisher', '~> 5.0'
+  pod 'RealmSwift'
 
 
 end

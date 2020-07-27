@@ -7,32 +7,28 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct HeroEntity: Codable {
-    let id: Int
-    let name, localizedName: String
-    let primaryAttr: PrimaryAttr
-    let attackType: AttackType
-    let roles: [Role]
-    let img, icon: String
-    let baseHealth: Int
-    let baseHealthRegen: Double?
-    let baseMana: Int
-    let baseManaRegen, baseArmor: Double
-    let baseMr, baseAttackMin, baseAttackMax, baseStr: Int
-    let baseAgi, baseInt: Int
-    let strGain, agiGain, intGain: Double
-    let attackRange, projectileSpeed: Int
-    let attackRate: Double
-    let moveSpeed: Int
-    let turnRate: Double
-    let cmEnabled: Bool
-    let legs, proBan, heroID, proWin: Int
-    let proPick, the1_Pick, the1_Win, the2_Pick: Int
-    let the2_Win, the3_Pick, the3_Win, the4_Pick: Int
-    let the4_Win, the5_Pick, the5_Win, the6_Pick: Int
-    let the6_Win, the7_Pick, the7_Win, the8_Pick: Int
-    let the8_Win, nullPick, nullWin: Int
+class HeroEntity: Object, Codable {
+    
+    dynamic var id: Int = 0
+    dynamic var name = "", localizedName: String = ""
+    dynamic var primaryAttr: PrimaryAttr?
+    dynamic var attackType: AttackType?
+    dynamic var roles: [Role] = []
+    dynamic var img = "", icon: String = ""
+    dynamic var baseHealth: Int = 0
+    dynamic var baseMana: Int = 0
+    dynamic var baseManaRegen = 0.0, baseArmor: Double = 0.0
+    dynamic var baseMr = 0, baseAttackMin = 0, baseAttackMax = 0, baseStr: Int = 0
+    dynamic var baseAgi = 0, baseInt: Int = 0
+    dynamic var strGain = 0.0, agiGain = 0.0, intGain: Double = 0.0
+    dynamic var attackRange = 0, projectileSpeed: Int = 0
+    dynamic var attackRate: Double = 0.0
+    dynamic var moveSpeed: Int = 0
+    dynamic var turnRate: Double = 0.0
+    dynamic var cmEnabled: Bool = false
+    dynamic var legs = 0, proBan = 0, heroID = 0, proWin: Int = 0
 
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -41,7 +37,6 @@ struct HeroEntity: Codable {
         case attackType = "attack_type"
         case roles, img, icon
         case baseHealth = "base_health"
-        case baseHealthRegen = "base_health_regen"
         case baseMana = "base_mana"
         case baseManaRegen = "base_mana_regen"
         case baseArmor = "base_armor"
@@ -64,25 +59,40 @@ struct HeroEntity: Codable {
         case proBan = "pro_ban"
         case heroID = "hero_id"
         case proWin = "pro_win"
-        case proPick = "pro_pick"
-        case the1_Pick = "1_pick"
-        case the1_Win = "1_win"
-        case the2_Pick = "2_pick"
-        case the2_Win = "2_win"
-        case the3_Pick = "3_pick"
-        case the3_Win = "3_win"
-        case the4_Pick = "4_pick"
-        case the4_Win = "4_win"
-        case the5_Pick = "5_pick"
-        case the5_Win = "5_win"
-        case the6_Pick = "6_pick"
-        case the6_Win = "6_win"
-        case the7_Pick = "7_pick"
-        case the7_Win = "7_win"
-        case the8_Pick = "8_pick"
-        case the8_Win = "8_win"
-        case nullPick = "null_pick"
-        case nullWin = "null_win"
+    }
+    
+    public required convenience init(from decoder: Decoder) throws {
+        self.init()
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.localizedName = try container.decode(String.self, forKey: .localizedName)
+        self.primaryAttr = try container.decode(PrimaryAttr.self, forKey: .primaryAttr)
+        self.attackType = try container.decode(AttackType.self, forKey: .attackType)
+        self.roles = try container.decode([Role].self, forKey: .roles)
+        self.img = try container.decode(String.self, forKey: .img)
+        self.icon = try container.decode(String.self, forKey: .icon)
+        self.baseHealth = try container.decode(Int.self, forKey: .baseHealth)
+        self.baseMana = try container.decode(Int.self, forKey: .baseMana)
+        self.baseArmor = try container.decode(Double.self, forKey: .baseArmor)
+        self.baseMr = try container.decode(Int.self, forKey: .baseMr)
+        self.baseAttackMin = try container.decode(Int.self, forKey: .baseAttackMin)
+        self.baseAttackMax = try container.decode(Int.self, forKey: .baseAttackMax)
+        self.baseAgi = try container.decode(Int.self, forKey: .baseAgi)
+        self.baseStr = try container.decode(Int.self, forKey: .baseStr)
+        self.strGain = try container.decode(Double.self, forKey: .strGain)
+        self.agiGain = try container.decode(Double.self, forKey: .agiGain)
+        self.intGain = try container.decode(Double.self, forKey: .intGain)
+        self.attackRange = try container.decode(Int.self, forKey: .attackRange)
+        self.projectileSpeed = try container.decode(Int.self, forKey: .projectileSpeed)
+        attackRate = try container.decode(Double.self, forKey: .attackRate)
+        moveSpeed = try container.decode(Int.self, forKey: .moveSpeed)
+        turnRate = try container.decode(Double.self, forKey: .turnRate)
+        cmEnabled = try container.decode(Bool.self, forKey: .cmEnabled)
+        legs = try container.decode(Int.self, forKey: .legs)
+        proBan = try container.decode(Int.self, forKey: .proBan)
+        heroID = try container.decode(Int.self, forKey: .heroID)
+        proWin = try container.decode(Int.self, forKey: .proWin)
     }
 }
 
