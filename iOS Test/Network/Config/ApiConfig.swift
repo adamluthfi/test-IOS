@@ -9,5 +9,5 @@
 import Foundation
 
 struct ApiConfig {
-    static let BASE_URL: String = { return "https://api.opendota.com/api" }()
+    static let BASE_URL: String = { return "https://private-4639ce-ecommerce56.apiary-mock.com" }()
 }

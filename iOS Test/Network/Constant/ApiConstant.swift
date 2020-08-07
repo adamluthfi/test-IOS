@@ -10,13 +10,13 @@ import Foundation
 import Moya
 
 enum ApiConstant {
-    case heroStats
+    case product
 }
 
 extension ApiConstant: BaseApi {
     var baseURL: URL {
         switch self {
-        case .heroStats:
+        case .product:
             guard let url = URL(string: ApiConfig.BASE_URL) else { fatalError("server in problem") }
             return url
         }
@@ -24,35 +24,35 @@ extension ApiConstant: BaseApi {
     
     var path: String {
         switch self {
-        case .heroStats:
-            return "/herostats"
+        case .product:
+            return "/home"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .heroStats:
+        case .product:
             return .get
         }
     }
     
     var parameters: [String : Any] {
         switch self {
-        case .heroStats:
+        case .product:
             return [:]
         }
     }
     
     var task: Task {
         switch self {
-        case .heroStats:
+        case .product:
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .heroStats:
+        case .product:
             return [:]
         }
     }

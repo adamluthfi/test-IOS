@@ -13,24 +13,57 @@ class ModuleBuilder {
     
     private init() {}
     
-    func createHeroViewController() -> HeroViewController {
-        let view = HeroViewController(nibName: String(describing: HeroViewController.self), bundle: nil)
-        let interactor = HeroInteractor()
-        let router = HeroRouter()
-        let presenter = HeroPresenter(interface: view, interactor: interactor, router: router)
+    func createHomeViewController() -> HomeViewController {
+        let view = HomeViewController(nibName: String(describing: HomeViewController.self), bundle: nil)
+        let interactor = HomeInteractor()
+        let router = HomeRouter()
+        let presenter = HomePresenter(interface: view, interactor: interactor, router: router)
         view.presenter = presenter
         interactor.output = presenter
         router.viewController = view
         return view
     }
     
-    func createHeroDetailViewController(heroDetail: HeroEntity) -> HeroDetailViewController {
-        let view = HeroDetailViewController(nibName: String(describing: HeroDetailViewController.self), bundle: nil)
-        let interactor = HeroDetailInteractor()
-        let router = HeroDetailRouter()
-        let presenter = HeroDetailPresenter(interface: view, interactor: interactor, router: router)
+    func createOtherViewController() -> OtherViewController {
+        let view = OtherViewController(nibName: String(describing: OtherViewController.self), bundle: nil)
+        let interactor = OtherInteractor()
+        let router = OtherRouter()
+        let presenter = OtherPresenter(interface: view, interactor: interactor, router: router)
         view.presenter = presenter
-        view.heroEntity = heroDetail
+        interactor.output = presenter
+        router.viewController = view
+        return view
+    }
+    
+    func createMainViewController() -> MainViewController {
+        let view = MainViewController(nibName: String(describing: MainViewController.self), bundle: nil)
+        let interactor = MainInteractor()
+        let router = MainRouter()
+        let presenter = MainPresenter(interface: view, interactor: interactor, router: router)
+        view.presenter = presenter
+        interactor.output = presenter
+        router.viewController = view
+        return view
+    }
+    
+    func createDetailViewController(product: ProductPromo) -> DetailViewController {
+        let view = DetailViewController(nibName: String(describing: DetailViewController.self), bundle: nil)
+        let interactor = DetailInteractor()
+        let router = DetailRouter()
+        let presenter = DetailPresenter(interface: view, interactor: interactor, router: router)
+        view.product = product
+        view.presenter = presenter
+        interactor.output = presenter
+        router.viewController = view
+        return view
+    }
+    
+    func createSearchViewController() -> SearchViewController {
+        let view = SearchViewController(nibName: String(describing: SearchViewController.self), bundle: nil)
+        let interactor = SearchInteractor()
+        let router = SearchRouter()
+        let presenter = SearchPresenter(interface: view, interactor: interactor, router: router)
+        view.presenter = presenter
         interactor.output = presenter
         router.viewController = view
         return view
