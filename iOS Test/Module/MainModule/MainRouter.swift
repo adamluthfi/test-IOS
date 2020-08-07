@@ -37,7 +37,7 @@ class MainRouter: MainRouterProtocol {
         eventTab.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
         eventTab.tabBarItem.tag = 2
             
-        let account = ModuleBuilder.shared.createOtherViewController()
+        let account = ModuleBuilder.shared.createAccountViewController()
         let accountTab = UINavigationController(rootViewController: account)
         accountTab.tabBarItem = UITabBarItem(title: "Account", image: nil, selectedImage: nil)
         accountTab.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)

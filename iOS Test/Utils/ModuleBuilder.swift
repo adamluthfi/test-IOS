@@ -68,4 +68,15 @@ class ModuleBuilder {
         router.viewController = view
         return view
     }
+    
+    func createAccountViewController() -> AccountViewController {
+        let view = AccountViewController(nibName: String(describing: AccountViewController.self), bundle: nil)
+        let interactor = AccountInteractor()
+        let router = AccountRouter()
+        let presenter = AccountPresenter(interface: view, interactor: interactor, router: router)
+        view.presenter = presenter
+        interactor.output = presenter
+        router.viewController = view
+        return view
+    }
 }

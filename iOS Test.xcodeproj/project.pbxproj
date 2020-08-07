@@ -57,6 +57,13 @@
 		0BB58E3C24DD3BC200A2A58E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB58E3A24DD3BC200A2A58E /* SearchTableViewCell.swift */; };
 		0BB58E3D24DD3BC200A2A58E /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB58E3B24DD3BC200A2A58E /* SearchTableViewCell.xib */; };
 		0BB58E4024DD44A600A2A58E /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB58E3F24DD44A600A2A58E /* SearchModel.swift */; };
+		0BB58E4924DD562100A2A58E /* AccountContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB58E4224DD562100A2A58E /* AccountContract.swift */; };
+		0BB58E4A24DD562100A2A58E /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB58E4324DD562100A2A58E /* AccountPresenter.swift */; };
+		0BB58E4B24DD562100A2A58E /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB58E4424DD562100A2A58E /* AccountRouter.swift */; };
+		0BB58E4C24DD562100A2A58E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB58E4524DD562100A2A58E /* AccountViewController.swift */; };
+		0BB58E4D24DD562100A2A58E /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB58E4624DD562100A2A58E /* AccountInteractor.swift */; };
+		0BB58E4E24DD562100A2A58E /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB58E4724DD562100A2A58E /* AccountEntity.swift */; };
+		0BB58E4F24DD562100A2A58E /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB58E4824DD562100A2A58E /* AccountViewController.xib */; };
 		0BF658E024C7E700006489E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF658DF24C7E700006489E6 /* AppDelegate.swift */; };
 		0BF658E224C7E700006489E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF658E124C7E700006489E6 /* SceneDelegate.swift */; };
 		0BF658E424C7E700006489E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF658E324C7E700006489E6 /* ViewController.swift */; };
@@ -118,6 +125,13 @@
 		0BB58E3A24DD3BC200A2A58E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		0BB58E3B24DD3BC200A2A58E /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		0BB58E3F24DD44A600A2A58E /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		0BB58E4224DD562100A2A58E /* AccountContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountContract.swift; sourceTree = "<group>"; };
+		0BB58E4324DD562100A2A58E /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		0BB58E4424DD562100A2A58E /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
+		0BB58E4524DD562100A2A58E /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		0BB58E4624DD562100A2A58E /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
+		0BB58E4724DD562100A2A58E /* AccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEntity.swift; sourceTree = "<group>"; };
+		0BB58E4824DD562100A2A58E /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		0BF658DC24C7E700006489E6 /* iOS Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF658DF24C7E700006489E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF658E124C7E700006489E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +221,7 @@
 		0BB58DD024DCFF7700A2A58E /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				0BB58E4124DD560000A2A58E /* AccountModule */,
 				0BB58E2A24DD39F100A2A58E /* SearchModule */,
 				0BB58E1B24DD2BA700A2A58E /* DetailModule */,
 				0BB58DFD24DD025A00A2A58E /* OtherModule */,
@@ -333,6 +348,20 @@
 				0BB58E3F24DD44A600A2A58E /* SearchModel.swift */,
 			);
 			path = ModelSearch;
+			sourceTree = "<group>";
+		};
+		0BB58E4124DD560000A2A58E /* AccountModule */ = {
+			isa = PBXGroup;
+			children = (
+				0BB58E4224DD562100A2A58E /* AccountContract.swift */,
+				0BB58E4324DD562100A2A58E /* AccountPresenter.swift */,
+				0BB58E4424DD562100A2A58E /* AccountRouter.swift */,
+				0BB58E4524DD562100A2A58E /* AccountViewController.swift */,
+				0BB58E4624DD562100A2A58E /* AccountInteractor.swift */,
+				0BB58E4724DD562100A2A58E /* AccountEntity.swift */,
+				0BB58E4824DD562100A2A58E /* AccountViewController.xib */,
+			);
+			path = AccountModule;
 			sourceTree = "<group>";
 		};
 		0BF658D324C7E700006489E6 = {
@@ -465,6 +494,7 @@
 				0BF658E924C7E702006489E6 /* Assets.xcassets in Resources */,
 				0BB58DFC24DD010700A2A58E /* HomeViewController.xib in Resources */,
 				0BB58E3824DD3A7900A2A58E /* SearchViewController.xib in Resources */,
+				0BB58E4F24DD562100A2A58E /* AccountViewController.xib in Resources */,
 				0BB58E2924DD2BE700A2A58E /* DetailViewController.xib in Resources */,
 				0BF658E724C7E700006489E6 /* Main.storyboard in Resources */,
 				0BB58DDF24DD003E00A2A58E /* MainViewController.xib in Resources */,
@@ -522,6 +552,7 @@
 			files = (
 				0BB58E2324DD2BE700A2A58E /* DetailContract.swift in Sources */,
 				0BB58E0524DD027300A2A58E /* OtherContract.swift in Sources */,
+				0BB58E4A24DD562100A2A58E /* AccountPresenter.swift in Sources */,
 				0BB58E0724DD027300A2A58E /* OtherRouter.swift in Sources */,
 				0BB58E4024DD44A600A2A58E /* SearchModel.swift in Sources */,
 				0BB58E3724DD3A7900A2A58E /* SearchEntity.swift in Sources */,
@@ -529,7 +560,9 @@
 				0B4356E324C88B7500F909F6 /* NetworkManager.swift in Sources */,
 				0BF6590424C7E7B5006489E6 /* ModuleBuilder.swift in Sources */,
 				0BB58E3624DD3A7900A2A58E /* SearchInteractor.swift in Sources */,
+				0BB58E4924DD562100A2A58E /* AccountContract.swift in Sources */,
 				0B219B6924CA8BC2005D7F3A /* ReachabilityConnection.swift in Sources */,
+				0BB58E4B24DD562100A2A58E /* AccountRouter.swift in Sources */,
 				0BB58DD924DD003E00A2A58E /* MainContract.swift in Sources */,
 				0BB58DF824DD010700A2A58E /* HomeRouter.swift in Sources */,
 				0BB58E0A24DD027300A2A58E /* OtherEntity.swift in Sources */,
@@ -545,8 +578,10 @@
 				0BB58E3224DD3A7900A2A58E /* SearchContract.swift in Sources */,
 				0BB58DDD24DD003E00A2A58E /* MainInteractor.swift in Sources */,
 				0BB58E0924DD027300A2A58E /* OtherInteractor.swift in Sources */,
+				0BB58E4D24DD562100A2A58E /* AccountInteractor.swift in Sources */,
 				0BF658E024C7E700006489E6 /* AppDelegate.swift in Sources */,
 				0BB58DDA24DD003E00A2A58E /* MainPresenter.swift in Sources */,
+				0BB58E4C24DD562100A2A58E /* AccountViewController.swift in Sources */,
 				0B307D8324C8882E00D7324A /* BaseApi.swift in Sources */,
 				0BB58E0624DD027300A2A58E /* OtherPresenter.swift in Sources */,
 				0BB58E0824DD027300A2A58E /* OtherViewController.swift in Sources */,
@@ -562,6 +597,7 @@
 				0BB58E2524DD2BE700A2A58E /* DetailRouter.swift in Sources */,
 				0BB58E3324DD3A7900A2A58E /* SearchPresenter.swift in Sources */,
 				0BB58E3424DD3A7900A2A58E /* SearchRouter.swift in Sources */,
+				0BB58E4E24DD562100A2A58E /* AccountEntity.swift in Sources */,
 				0BB58E2824DD2BE700A2A58E /* DetailEntity.swift in Sources */,
 				0BF658E224C7E700006489E6 /* SceneDelegate.swift in Sources */,
 				0B307D8024C887D200D7324A /* ApiConstant.swift in Sources */,
