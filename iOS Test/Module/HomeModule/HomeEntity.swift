@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct HomeEntity: Codable {
     var data: HomeEntityModel?
@@ -47,11 +48,12 @@ struct Category: Codable {
 }
 
 // MARK: - ProductPromo
-struct ProductPromo: Codable {
-    let id: String
-    let imageURL: String
-    let title, productPromoDescription, price: String
-    let loved: Int
+class ProductPromo: Object, Codable {
+    
+    @objc dynamic var id: String?
+    @objc dynamic var imageURL: String?
+    @objc dynamic var title, productPromoDescription, price: String?
+    @objc dynamic var loved: Int = 0
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -59,6 +61,21 @@ struct ProductPromo: Codable {
         case title
         case productPromoDescription = "description"
         case price, loved
+    }
+    
+    override public static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    public required convenience init(form decoder: Decoder) throws {
+        self.init()
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        imageURL = try container.decode(String.self, forKey: .imageURL)
+        title = try container.decode(String.self, forKey: .title)
+        productPromoDescription = try container.decode(String.self, forKey: .productPromoDescription)
+        price = try container.decode(String.self, forKey: .price)
+        loved = try container.decode(Int.self, forKey: .loved)
     }
 }
 

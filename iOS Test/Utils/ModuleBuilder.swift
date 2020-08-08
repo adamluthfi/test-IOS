@@ -79,4 +79,15 @@ class ModuleBuilder {
         router.viewController = view
         return view
     }
+    
+    func createLoginViewController() -> LoginViewController {
+        let view = LoginViewController(nibName: String(describing: LoginViewController.self), bundle: nil)
+        let interactor = LoginInteractor()
+        let router = LoginRouter()
+        let presenter = LoginPresenter(interface: view, interactor: interactor, router: router)
+        view.presenter = presenter
+        interactor.output = presenter
+        router.viewController = view
+        return view
+    }
 }

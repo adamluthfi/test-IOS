@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AccountViewController: UIViewController {
     
@@ -18,15 +19,25 @@ class AccountViewController: UIViewController {
             tableView.delegate = self
         }
     }
+    
+    var productList: Results<ProductPromo>? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     // MARK: - Overrides
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        let realm = try! Realm()
+        self.productList = realm.objects(ProductPromo.self)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        let realm = try! Realm()
+        self.productList = realm.objects(ProductPromo.self)
     }
     
     override func viewDidLoad() {
@@ -45,20 +56,22 @@ class AccountViewController: UIViewController {
     // MARK: - Privates
     private func setupViews() {
         // TODO: Add setting up views here
+        let accountNib = UINib(nibName: String(describing: AccountTableViewCell.self), bundle: nil)
+        tableView.register(accountNib, forCellReuseIdentifier: AccountTableViewCell.identifier)
     }
 }
 
 // MARK: - View Protocol
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return productList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier, for: indexPath) as! AccountTableViewCell
+        cell.product = productList?[indexPath.item]
+        return cell
     }
-    
-    
 }
 
 extension AccountViewController: AccountViewProtocol {

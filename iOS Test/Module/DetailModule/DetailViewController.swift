@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
     
@@ -52,7 +53,11 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func buyButton(_ sender: Any) {
+        let realm = try! Realm()
         
+        try! realm.write {
+            realm.create(ProductPromo.self, value: product ?? [String: Any].self, update: .all)
+        }
     }
     
     // MARK: - Privates
