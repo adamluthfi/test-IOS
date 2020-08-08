@@ -9,6 +9,7 @@ target 'iOS Test' do
   pod 'Moya', '~> 14.0'
   pod 'Kingfisher', '~> 5.0'
   pod 'RealmSwift'
+  pod 'GoogleSignIn'
 
 
 end

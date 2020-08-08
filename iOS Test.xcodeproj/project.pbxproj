@@ -20,6 +20,7 @@
 		0B3A3DCF24DEDAC400982284 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A3DC824DEDAC400982284 /* LoginInteractor.swift */; };
 		0B3A3DD024DEDAC400982284 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A3DC924DEDAC400982284 /* LoginEntity.swift */; };
 		0B3A3DD124DEDAC400982284 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B3A3DCA24DEDAC400982284 /* LoginViewController.xib */; };
+		0B3A3DD324DEE34E00982284 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B3A3DD224DEE34E00982284 /* GoogleService-Info.plist */; };
 		0B4356E324C88B7500F909F6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4356E224C88B7500F909F6 /* NetworkManager.swift */; };
 		0B4356E624C88C9200F909F6 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4356E524C88C9200F909F6 /* ResponseParser.swift */; };
 		0BB58DD924DD003E00A2A58E /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB58DD224DD003E00A2A58E /* MainContract.swift */; };
@@ -97,6 +98,7 @@
 		0B3A3DC824DEDAC400982284 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		0B3A3DC924DEDAC400982284 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		0B3A3DCA24DEDAC400982284 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		0B3A3DD224DEE34E00982284 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B4356E224C88B7500F909F6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0B4356E524C88C9200F909F6 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
 		0BB58DD224DD003E00A2A58E /* MainContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
@@ -150,7 +152,7 @@
 		0BB58E4624DD562100A2A58E /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
 		0BB58E4724DD562100A2A58E /* AccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEntity.swift; sourceTree = "<group>"; };
 		0BB58E4824DD562100A2A58E /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
-		0BF658DC24C7E700006489E6 /* iOS Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BF658DC24C7E700006489E6 /* SehatQ test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SehatQ test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF658DF24C7E700006489E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF658E124C7E700006489E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0BF658E324C7E700006489E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -420,7 +422,7 @@
 		0BF658DD24C7E700006489E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BF658DC24C7E700006489E6 /* iOS Test.app */,
+				0BF658DC24C7E700006489E6 /* SehatQ test.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -439,6 +441,7 @@
 				0BF658E824C7E702006489E6 /* Assets.xcassets */,
 				0BF658EA24C7E702006489E6 /* LaunchScreen.storyboard */,
 				0BF658ED24C7E702006489E6 /* Info.plist */,
+				0B3A3DD224DEE34E00982284 /* GoogleService-Info.plist */,
 			);
 			path = "iOS Test";
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				0BF658D924C7E700006489E6 /* Frameworks */,
 				0BF658DA24C7E700006489E6 /* Resources */,
 				36AB0AF13C425F9AB7331781 /* [CP] Embed Pods Frameworks */,
+				FB62C488B49A27228323274F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -487,7 +491,7 @@
 			);
 			name = "iOS Test";
 			productName = "iOS Test";
-			productReference = 0BF658DC24C7E700006489E6 /* iOS Test.app */;
+			productReference = 0BF658DC24C7E700006489E6 /* SehatQ test.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -537,6 +541,7 @@
 				0B3A3DC224DED63300982284 /* AccountTableViewCell.xib in Resources */,
 				0BB58E3D24DD3BC200A2A58E /* SearchTableViewCell.xib in Resources */,
 				0BF658E924C7E702006489E6 /* Assets.xcassets in Resources */,
+				0B3A3DD324DEE34E00982284 /* GoogleService-Info.plist in Resources */,
 				0BB58DFC24DD010700A2A58E /* HomeViewController.xib in Resources */,
 				0BB58E3824DD3A7900A2A58E /* SearchViewController.xib in Resources */,
 				0BB58E4F24DD562100A2A58E /* AccountViewController.xib in Resources */,
@@ -586,6 +591,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB62C488B49A27228323274F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS Test/Pods-iOS Test-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS Test/Pods-iOS Test-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS Test/Pods-iOS Test-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -805,7 +827,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.ios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SehatQ test";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -824,7 +846,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.ios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SehatQ test";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

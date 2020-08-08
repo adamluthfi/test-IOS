@@ -42,7 +42,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flD-As-FY8">
-                            <rect key="frame" x="8" y="234" width="366" height="50"/>
+                            <rect key="frame" x="8" y="140" width="366" height="50"/>
                             <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Vfi-ad-PXW"/>
@@ -54,13 +54,18 @@
                                 <action selector="buttonLoginAction:" destination="-1" eventType="touchUpInside" id="BOg-Gc-VEu"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1N-te-msY">
+                            <rect key="frame" x="8" y="198" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="TpV-c4-Kw3" secondAttribute="trailing" constant="8" id="1jf-vK-5qD"/>
-                        <constraint firstAttribute="bottom" secondItem="flD-As-FY8" secondAttribute="bottom" constant="16" id="9Rp-Qr-0w5"/>
                         <constraint firstItem="flD-As-FY8" firstAttribute="leading" secondItem="JF7-Cs-tNS" secondAttribute="leading" constant="8" id="D7f-6E-2rI"/>
                         <constraint firstItem="ozE-CQ-sAY" firstAttribute="top" secondItem="TpV-c4-Kw3" secondAttribute="bottom" constant="8" id="N7i-4h-Fpd"/>
+                        <constraint firstItem="flD-As-FY8" firstAttribute="top" secondItem="ozE-CQ-sAY" secondAttribute="bottom" constant="16" id="SZT-u2-WUw"/>
                         <constraint firstItem="ozE-CQ-sAY" firstAttribute="leading" secondItem="JF7-Cs-tNS" secondAttribute="leading" constant="8" id="Xh4-cw-Zvj"/>
                         <constraint firstItem="TpV-c4-Kw3" firstAttribute="leading" secondItem="JF7-Cs-tNS" secondAttribute="leading" constant="8" id="a5U-9C-JVs"/>
                         <constraint firstAttribute="trailing" secondItem="ozE-CQ-sAY" secondAttribute="trailing" constant="8" id="dZF-Tg-j6R"/>
