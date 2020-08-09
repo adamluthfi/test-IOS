@@ -13,6 +13,7 @@ class HomeRouter: HomeRouterProtocol {
      // MARK: RouterProtocol
     func navigateToDetai(product: ProductPromo) {
         let vc = ModuleBuilder.shared.createDetailViewController(product: product)
+        vc.delegate = viewController.self
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     

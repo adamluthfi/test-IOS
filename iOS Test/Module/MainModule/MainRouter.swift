@@ -17,6 +17,7 @@ class MainRouter: MainRouterProtocol {
     func itemTabBarController(_ completion: ([UIViewController]) -> Void) {
         
         let home = ModuleBuilder.shared.createHomeViewController()
+        home.delegate = self.viewController
         let homeTab = UINavigationController(rootViewController: home)
         homeTab.tabBarItem = UITabBarItem(title: "Home", image: nil, selectedImage: nil)
         homeTab.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)

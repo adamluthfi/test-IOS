@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol HomeViewControllerDelegate: class {
+    func onAccountTab()
+}
+
 class HomeViewController: UIViewController {
     
     var presenter: HomePresenterProtocol?
+    var delegate: HomeViewControllerDelegate?
     
     @IBOutlet weak var buttonSearch: UIButton!
     @IBOutlet weak var tableView: UITableView! {
@@ -115,6 +120,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+extension HomeViewController: DetailViewControllerDelegate {
+    func onCheckBuy() {
+        delegate?.onAccountTab()
+    }
 }
 
 extension HomeViewController: HomeViewProtocol {

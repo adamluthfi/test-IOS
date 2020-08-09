@@ -50,6 +50,12 @@ class MainViewController: UITabBarController {
 }
 
 // MARK: - View Protocol
+extension MainViewController: HomeViewControllerDelegate {
+    func onAccountTab() {
+        selectedIndex = 3
+    }
+}
+
 extension MainViewController: MainViewProtocol {
     func populateData() {
         // TODO: Populate data

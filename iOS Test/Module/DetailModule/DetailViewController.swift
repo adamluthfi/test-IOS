@@ -9,6 +9,10 @@
 import UIKit
 import RealmSwift
 
+protocol DetailViewControllerDelegate: class {
+    func onCheckBuy()
+}
+
 class DetailViewController: UIViewController {
     
     var presenter: DetailPresenterProtocol?
@@ -20,6 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var labelPrice: UILabel!
     
     var product: ProductPromo?
+    var delegate: DetailViewControllerDelegate?
     
     // MARK: - Overrides
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +63,8 @@ class DetailViewController: UIViewController {
         try! realm.write {
             realm.create(ProductPromo.self, value: product ?? [String: Any].self, update: .all)
         }
+        
+        delegate?.onCheckBuy()
     }
     
     // MARK: - Privates

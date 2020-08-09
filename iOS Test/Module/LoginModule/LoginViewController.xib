@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="iOS_Test" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="SehatQ_test" customModuleProvider="target">
             <connections>
                 <outlet property="buttonLogin" destination="flD-As-FY8" id="KNs-db-Nda"/>
                 <outlet property="contentViewLogin" destination="JF7-Cs-tNS" id="JXM-Bd-ENk"/>
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JF7-Cs-tNS">
-                    <rect key="frame" x="16" y="298" width="382" height="300"/>
+                    <rect key="frame" x="16" y="288" width="382" height="320"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TpV-c4-Kw3">
                             <rect key="frame" x="8" y="16" width="366" height="50"/>
@@ -54,23 +54,45 @@
                                 <action selector="buttonLoginAction:" destination="-1" eventType="touchUpInside" id="BOg-Gc-VEu"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1N-te-msY">
-                            <rect key="frame" x="8" y="198" width="46" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1N-te-msY">
+                            <rect key="frame" x="8" y="198" width="366" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="rMe-0s-w9i"/>
+                            </constraints>
+                            <state key="normal" title="Gogogle Sign in">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJL-a4-ceU">
+                            <rect key="frame" x="8" y="256" width="366" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="TAT-Mu-Kfs"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="UqK-jc-mpj"/>
+                            </constraints>
+                            <state key="normal" title="Facebook Sign in">
+                                <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </state>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="P1N-te-msY" firstAttribute="top" secondItem="flD-As-FY8" secondAttribute="bottom" constant="8" id="0rd-XW-wnQ"/>
                         <constraint firstAttribute="trailing" secondItem="TpV-c4-Kw3" secondAttribute="trailing" constant="8" id="1jf-vK-5qD"/>
+                        <constraint firstItem="EJL-a4-ceU" firstAttribute="top" secondItem="P1N-te-msY" secondAttribute="bottom" constant="8" id="CjI-js-KOa"/>
                         <constraint firstItem="flD-As-FY8" firstAttribute="leading" secondItem="JF7-Cs-tNS" secondAttribute="leading" constant="8" id="D7f-6E-2rI"/>
                         <constraint firstItem="ozE-CQ-sAY" firstAttribute="top" secondItem="TpV-c4-Kw3" secondAttribute="bottom" constant="8" id="N7i-4h-Fpd"/>
                         <constraint firstItem="flD-As-FY8" firstAttribute="top" secondItem="ozE-CQ-sAY" secondAttribute="bottom" constant="16" id="SZT-u2-WUw"/>
                         <constraint firstItem="ozE-CQ-sAY" firstAttribute="leading" secondItem="JF7-Cs-tNS" secondAttribute="leading" constant="8" id="Xh4-cw-Zvj"/>
+                        <constraint firstAttribute="trailing" secondItem="EJL-a4-ceU" secondAttribute="trailing" constant="8" id="a2x-UP-NcM"/>
                         <constraint firstItem="TpV-c4-Kw3" firstAttribute="leading" secondItem="JF7-Cs-tNS" secondAttribute="leading" constant="8" id="a5U-9C-JVs"/>
+                        <constraint firstItem="EJL-a4-ceU" firstAttribute="leading" secondItem="JF7-Cs-tNS" secondAttribute="leading" constant="8" id="bxX-Qm-wiG"/>
+                        <constraint firstItem="P1N-te-msY" firstAttribute="leading" secondItem="JF7-Cs-tNS" secondAttribute="leading" constant="8" id="dRi-Hf-JWT"/>
                         <constraint firstAttribute="trailing" secondItem="ozE-CQ-sAY" secondAttribute="trailing" constant="8" id="dZF-Tg-j6R"/>
                         <constraint firstAttribute="trailing" secondItem="flD-As-FY8" secondAttribute="trailing" constant="8" id="raO-ux-uwr"/>
-                        <constraint firstAttribute="height" constant="300" id="t2n-Hk-fSY"/>
+                        <constraint firstAttribute="trailing" secondItem="P1N-te-msY" secondAttribute="trailing" constant="8" id="rjx-Po-hln"/>
+                        <constraint firstAttribute="height" constant="320" id="t2n-Hk-fSY"/>
                         <constraint firstItem="TpV-c4-Kw3" firstAttribute="top" secondItem="JF7-Cs-tNS" secondAttribute="top" constant="16" id="v8u-5a-uTn"/>
                     </constraints>
                 </view>
